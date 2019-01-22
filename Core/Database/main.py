@@ -24,4 +24,4 @@ class Test(Base):
     name = sqlalchemy.Column(sqlalchemy.String(32))
 
 
-Test.__table__.drop(engine)
+Test.__table__.create(engine)
