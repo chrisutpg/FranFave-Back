@@ -1,11 +1,16 @@
-# Testing verison control
+# Testing MySql Connection
 
-import random
+from sqlalchemy import create_engine
+from sqlalchemy.engine.url import URL
+from sqlalchemy.ext.declarative import declarative_base
 
-def r():
-    i = ''
-    for x in range(101):
-        i = i + str(random.randint(0, 1000000))
-    return i
+franfave_settings = {'drivername': 'mysql+pymysql',
+                     'username': 'cnelson_franfave',
+                     'password': 'franfavedev01!',
+                     'host': '192.254.225.163',
+                     'port': '3306',
+                     'database': 'cnelson_franfave'}
 
-print(r())
+engine = create_engine(URL(**franfave_settings))
+
+print(URL(**franfave_settings))
